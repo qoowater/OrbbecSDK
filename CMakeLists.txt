@@ -2,18 +2,10 @@ cmake_minimum_required(VERSION 3.1.15)
 project(OrbbecSDK VERSION 1.10.12 LANGUAGES C CXX)
 
 # Determine host platform
-# include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/DetermineHostPlatform.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/DetermineHostPlatform.cmake)
 
 
-message(CMAKE_SYSTEM_PROCESSOR="${CMAKE_SYSTEM_PROCESSOR}")
 
-if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "^aarch64")
-set(HOST_PLATFORM "arm64")
-set(MACHINES "aarch64")
-else()
-set(HOST_PLATFORM "linux_x64")
-set(MACHINES "x86_64")
-endif()
 
 if(WIN32)
     set(ORBBEC_LIB_PREFIX "")
